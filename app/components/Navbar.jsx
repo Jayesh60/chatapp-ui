@@ -114,8 +114,8 @@ const Navbar = () => {
         </div>
       </div>
       {toggle && (
-        <div className="h-full w-full z-[100] fixed" onClick={handleToggle}>
-          <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-10 w-[35vw] px-6 py-4 mt-16 bg-gray text-white text-sm rounded">
+        <div className="h-full w-full z-[100]  fixed" onClick={handleToggle}>
+          <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-10 w-[35vw] px-6 py-4  mt-16 bg-light-gray shadow-menu2 text-white text-sm rounded">
             <Link href={"/"} className="flex gap-1">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

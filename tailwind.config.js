@@ -17,6 +17,10 @@ module.exports = {
         'gray': "#181818",
         'light-gray' : "#2F2F2F",
         'black' : '#050505',
+      },
+      boxShadow:{
+        'menu' : "rgba(7,_65,_210,_0.1)_0px_9px_30px",
+        'menu2': "inset 0 2px 4px 0 rgba(0,0,0,0.05);"
       }
     },
   },

@@ -2,8 +2,9 @@
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
+import MessageContainer from "./MessageContainer";
 
-const ChatContainer = ({ back }) => {
+const ChatContainer = ({ name,img ,back }) => {
   const [toggle, setToggle] = useState(false);
   const handleToggle = () => {
     setToggle((prev) => !prev);
@@ -11,17 +12,18 @@ const ChatContainer = ({ back }) => {
 
   return (
     <section className="w-full">
+      {/* desktop view  */}
       <div className="md:flex flex-col hidden bg-gray rounded max-h-screen h-full justify-between">
         <div className="bg-light-gray flex justify-between items-center h-[10%] w-full rounded-t p-2">
           <div className="flex items-center gap-3 px-4">
             <Image
-              src={"/common/add.svg"}
-              height={28}
-              width={28}
-              className=""
+              src={img}
+              height={36}
+              width={36}
+              className="rounded-full"
               alt="profile"
             />
-            <h1 className="text-sm opacity-80">Hi</h1>
+            <h1 className="text-sm opacity-80">{name}</h1>
           </div>
           <div className="flex gap-3 items-center px-2 opacity-80">
             <button className="flex gap-2 items-center ">
@@ -44,10 +46,11 @@ const ChatContainer = ({ back }) => {
             </button>
           </div>
         </div>
+        <MessageContainer/>
         <div className="px-4 pb-4 flex gap-3">
           <input
             type="text"
-            placeholder="Message"
+            placeholder="Message..."
             className="bg-light-gray w-full outline-none px-4 py-3 text-xs rounded-full text-white opacity-70"
           />
           <button>
@@ -55,6 +58,7 @@ const ChatContainer = ({ back }) => {
           </button>
         </div>
       </div>
+      {/* mobile view  */}
       <div className="md:hidden inset-0 top-0 absolute z-[100] flex flex-col justify-between w-full h-screen bg-gray">
         <div className="bg-light-gray flex justify-between items-center h-[8%] w-full rounded-t px-3 p-2">
           <div className="flex items-center gap-4">
@@ -71,14 +75,14 @@ const ChatContainer = ({ back }) => {
                 />
               </svg>
               <Image
-                src={"/common/add.svg"}
-                height={48}
-                width={48}
-                className=""
+                src={img}
+                height={38}
+                width={38}
+                className="rounded-full"
                 alt="profile"
               />
             </button>
-            <h1 className="opacity-80">Hi</h1>
+            <h1 className="opacity-80">{name}</h1>
           </div>
           <button onClick={handleToggle}>
             <svg
@@ -98,11 +102,11 @@ const ChatContainer = ({ back }) => {
             </svg>
           </button>
         </div>
-        <div></div>
+        <MessageContainer/>
         <div className="px-2 pb-4 flex gap-3">
           <input
             type="text"
-            placeholder="Message"
+            placeholder="Message..."
             className="bg-light-gray w-full outline-none px-6 py-4 rounded-full text-white opacity-70"
           />
           <button>
@@ -112,7 +116,7 @@ const ChatContainer = ({ back }) => {
       </div>
       {toggle && (
         <div className="h-full w-full z-[100] fixed" onClick={handleToggle}>
-          <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-10 w-[35vw] px-6 py-4 mt-16 bg-gray text-white text-sm rounded">
+          <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-6 w-[35vw] px-6 py-4  bg-light-gray text-white text-sm rounded">
             <Link href={"/"} className="flex gap-1">
               View Contact
             </Link>
