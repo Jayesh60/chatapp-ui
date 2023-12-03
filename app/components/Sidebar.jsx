@@ -1,8 +1,8 @@
 import Image from "next/image";
 
-const Sidebar = () => {
+const Sidebar = ({openChat}) => {
   return (
-    <div className="md:w-[30%] px-6 py-5 bg-gray !overflow-y-scroll no-scrollbar rounded max-h-screen h-full flex gap-4 flex-col">
+    <div className="md:w-[40%] px-6 py-5 bg-gray !overflow-y-scroll no-scrollbar rounded max-h-screen h-full flex gap-4 flex-col">
       <div className="flex gap-2 flex-col">
         <h1 className="uppercase  opacity-70">All Your Chats</h1>
         <button className="rounded-md bg-light-salmon px-4 py-2 w-full text-sm font-semibold text-black">
@@ -13,12 +13,12 @@ const Sidebar = () => {
         </p>
       </div>
       <div className="pt-2 flex flex-col gap-2">
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
-        <Chat />
+        <Chat openChat={openChat}/>
+        <Chat openChat={openChat}/>
+        <Chat openChat={openChat}/>
+        <Chat openChat={openChat}/>
+        <Chat openChat={openChat}/>
+        <Chat openChat={openChat}/>
       </div>
       <div className=" px-2 py-[0.5px] bg-[#3F3F3F]"></div>
       <button className="flex gap-3 items-center">
@@ -29,10 +29,11 @@ const Sidebar = () => {
   );
 };
 
-const Chat = ({ img, name, msg }) => {
+const Chat = ({ img, name, msg, openChat }) => {
   return (
     <div
       className={`w-full bg-light-gray h-[8vh] overflow-hidden rounded-full flex gap-3 items-center cursor-pointer`}
+      onClick={openChat}
     >
       <div className="h-full flex items-center rounded-full">
         <Image
@@ -40,6 +41,7 @@ const Chat = ({ img, name, msg }) => {
           width={20}
           height={20}
           className="h-full pl-2 py-2 w-full"
+          alt="add"
         />
       </div>
       <div className="overflow-x-hidden">
