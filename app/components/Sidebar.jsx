@@ -18,7 +18,7 @@ const Sidebar = ({ openChat }) => {
           active
           img={"common/jayesh.svg"}
           msg={"Whats your problem??"}
-          name={"Name"}
+          name={"Jayesh"}
         />
         <Chat openChat={openChat} msg={"How are you?"} name={"Person2"} />
         <Chat openChat={openChat} name={"Person3"} msg={"Hi"} />
