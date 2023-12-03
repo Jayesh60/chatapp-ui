@@ -1,6 +1,11 @@
-# Next.js Chat App UI
+# Next.js Chat App UI 
 
 This project implements a chat application UI using Next.js, TailwindCss. The UI is structured with various components to create a seamless and organized chat experience.
+
+
+## Preview
+
+Check out the live preview of the application [here](https://chatapp-ui-xi.vercel.app).
 ## Project Structure
 
 ### Components
