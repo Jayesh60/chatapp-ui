@@ -11,9 +11,9 @@ const Navbar = () => {
     setToggle((prev) => !prev);
   };
   return (
-    <nav>
-      <div className="px-10 md:px-24 py-4 md:py-6 flex justify-between items-center">
-        <div className="flex gap-8 items-center">
+    <nav className="">
+      <div className="px-10 md:px-24 py-4 md:py-6 fixed w-full flex justify-between items-center">
+        <div className="flex gap-8 items-center ">
           <h1 className="text-3xl font-extrabold text-light-salmon">Logo</h1>
           <div className="h-10 md:flex hidden text-gray-300 w-0.5"></div>
           <Link
@@ -114,7 +114,7 @@ const Navbar = () => {
         </div>
       </div>
       {toggle && (
-        <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-10 w-[35vw] px-6 py-4 bg-gray text-white text-sm rounded">
+        <div className="flex md:hidden z-[100] flex-col gap-2 absolute right-0 mr-10 w-[35vw] px-6 py-4 mt-16 bg-gray text-white text-sm rounded">
           <Link href={"/"} className="flex gap-1">
             {" "}
             <svg
