@@ -9,7 +9,7 @@ const Message = ({ owner, Message, img, sameSender }) => {
           : "flex-row justify-start"
       } `}
     >
-      <div className={`${sameSender ? "opacity-0" : ""} md:flex hidden`}>
+      <div className={`${sameSender ? "opacity-0" : ""} md:block hidden`}>
         <Image src={img ? img : '/common/avatar.svg'} height={35} width={35} alt="profile" className="text-white rounded-full" />
       </div>
       <div
