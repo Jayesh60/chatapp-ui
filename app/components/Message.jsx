@@ -10,7 +10,7 @@ const Message = ({ owner, Message, img, sameSender }) => {
       } `}
     >
       <div className={`${sameSender ? "opacity-0" : ""}`}>
-        <Image src={img ? img : '/common/avatar.svg'} height={35} width={35} alt="profile" className="text-white" />
+        <Image src={img ? img : '/common/avatar.svg'} height={35} width={35} alt="profile" className="text-white rounded-full" />
       </div>
       <div
         className={`${
